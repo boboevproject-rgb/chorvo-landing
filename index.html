@@ -451,6 +451,7 @@ h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.2;letter-spacing:-.02em}
 .tg-link{border:0;background:none;padding:6px 2px;cursor:pointer;font-weight:500;text-decoration:underline;text-decoration-color:#8fc400;text-decoration-thickness:2px;text-underline-offset:.3em}
 .f-st{color:var(--lime-ink);font-weight:500}
 .f-st:empty{display:none}
+.send .btn:disabled{opacity:.72;cursor:wait}
 @media (max-width:899px){.apply-in{grid-template-columns:1fr}}
 @media (max-width:520px){.fields{grid-template-columns:1fr}.direct .dv{display:none}}
 
@@ -1013,12 +1014,14 @@ h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.2;letter-spacing:-.02em}
           <div class="fld"><input id="f-contact" name="contact" autocomplete="tel" placeholder=" " required><label for="f-contact" data-i18n="f.contact">Телефон или Telegram</label></div>
           <div class="fld wide"><textarea id="f-comment" name="comment" placeholder=" "></textarea><label for="f-comment" data-i18n="f.comment">Город и&nbsp;сколько птичников, если удобно</label></div>
         </div>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <p class="f-err" id="f-err" role="alert" hidden data-i18n="f.err">Укажите имя и&nbsp;телефон или Telegram.</p>
         <div class="send">
-          <button class="btn" type="submit"><span data-i18n="f.wa">Отправить в&nbsp;WhatsApp</span><i><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></i></button>
+          <button class="btn" type="submit"><span data-i18n="f.submit">Отправить заявку</span><i><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></i></button>
           <button class="tg-link" type="button" id="f-tg" data-i18n="f.tg">или в&nbsp;Telegram</button>
         </div>
-        <p class="fine" data-i18n="f.hint">Откроется мессенджер с&nbsp;готовым сообщением, останется нажать «Отправить».</p>
+        <p class="fine" data-i18n="f.hint">Заявка будет отправлена на нашу почту. Мы свяжемся с вами по указанным контактам.</p>
+        <p class="fine" data-i18n="f.privacy">Нажимая «Отправить заявку», вы соглашаетесь на передачу указанных данных через FormSubmit на bilolpython@gmail.com. FormSubmit сообщает, что хранит копии заявок до 30 дней; <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">политика конфиденциальности</a>.</p>
         <p class="f-st" id="f-st" role="status"></p>
       </form>
     </div>
@@ -1079,9 +1082,14 @@ h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.2;letter-spacing:-.02em}
 "nx.3c":"птичник, куда человеку не нужно заходить",
 "req.head":"Здравствуйте! Заявка с сайта Chorvo AI.",
 "req.comment":"Комментарий",
-"f.sent":"Открыли WhatsApp с готовым сообщением.",
+"f.sending":"Отправляем заявку…",
+"f.sent":"Заявка отправлена. Мы свяжемся с вами по указанным контактам.",
+"f.failed":"Не удалось отправить заявку. Попробуйте ещё раз или напишите нам напрямую.",
 "f.tgok":"Текст скопирован. Вставьте его в чат Telegram.",
-"f.tgno":"Открыли Telegram. Напишите нам имя, телефон и размер фермы."
+"f.tgno":"Открыли Telegram. Напишите нам имя, телефон и размер фермы.",
+"f.submit":"Отправить заявку",
+"f.privacy":"Нажимая «Отправить заявку», вы соглашаетесь на передачу указанных данных через FormSubmit на bilolpython@gmail.com. FormSubmit сообщает, что хранит копии заявок до 30 дней; <a href=\"https://formsubmit.co/privacy.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">политика конфиденциальности</a>.",
+"f.hint":"Заявка будет отправлена на нашу почту. Мы свяжемся с вами по указанным контактам."
 },
 "tg":{
 "meta.title":"Chorvo AI: мониторинги талафоти бройлерҳо",
@@ -1103,9 +1111,14 @@ h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.2;letter-spacing:-.02em}
 "nx.3c":"паррандахонае, ки ба он одам даромадан лозим нест",
 "req.head":"Салом! Дархост аз сайти Chorvo AI.",
 "req.comment":"Шарҳ",
-"f.sent":"WhatsApp бо паёми тайёр кушода шуд.",
+"f.sending":"Дархост фиристода мешавад…",
+"f.sent":"Дархост фиристода шуд. Мо бо шумо тавассути маълумоти тамосатон алоқа мекунем.",
+"f.failed":"Дархост фиристода нашуд. Боз кӯшиш кунед ё мустақиман ба мо нависед.",
 "f.tgok":"Матн нусха бардошта шуд. Онро ба чати Telegram гузоред.",
 "f.tgno":"Telegram кушода шуд. Ном, телефон ва андозаи фермаро ба мо нависед.",
+"f.submit":"Фиристодани дархост",
+"f.privacy":"Бо пахши «Фиристодани дархост» шумо барои ирсоли маълумоти воридшуда тавассути FormSubmit ба bilolpython@gmail.com розӣ мешавед. FormSubmit мегӯяд, ки нусхаи дархостҳоро то 30 рӯз нигоҳ медорад; <a href=\"https://formsubmit.co/privacy.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">сиёсати махфият</a>.",
+"f.hint":"Дархост ба почтаи мо фиристода мешавад. Мо бо шумо тавассути маълумоти тамосатон алоқа мекунем.",
 "nav.aria":"Бахшҳо",
 "lang.aria":"Забони саҳифа",
 "menu.aria":"Меню",
@@ -1351,9 +1364,14 @@ h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.2;letter-spacing:-.02em}
 "nx.3c":"odam kirishi shart boʻlmagan parrandaxona",
 "req.head":"Assalomu alaykum! Chorvo AI saytidan ariza.",
 "req.comment":"Izoh",
-"f.sent":"Tayyor xabar bilan WhatsApp ochildi.",
+"f.sending":"Ariza yuborilmoqda…",
+"f.sent":"Ariza yuborildi. Ko‘rsatilgan aloqa ma’lumotlari orqali siz bilan bog‘lanamiz.",
+"f.failed":"Arizani yuborib bo‘lmadi. Qayta urinib ko‘ring yoki bizga bevosita yozing.",
 "f.tgok":"Matn nusxalandi. Uni Telegram chatiga qoʻying.",
 "f.tgno":"Telegram ochildi. Ismingiz, telefoningiz va ferma hajmini yozing.",
+"f.submit":"Ariza yuborish",
+"f.privacy":"«Ariza yuborish» tugmasini bosish orqali kiritilgan ma’lumotlarni FormSubmit orqali bilolpython@gmail.com manziliga yuborishga rozilik bildirasiz. FormSubmit ariza nusxalarini 30 kungacha saqlashini bildiradi; <a href=\"https://formsubmit.co/privacy.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">maxfiylik siyosati</a>.",
+"f.hint":"Ariza elektron pochtamizga yuboriladi. Ko‘rsatilgan aloqa ma’lumotlari orqali siz bilan bog‘lanamiz.",
 "nav.aria":"Boʻlimlar",
 "lang.aria":"Sahifa tili",
 "menu.aria":"Menyu",
@@ -1599,9 +1617,14 @@ h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.2;letter-spacing:-.02em}
 "nx.3c":"a poultry house no one needs to enter",
 "req.head":"Hello! Request from the Chorvo AI website.",
 "req.comment":"Comment",
-"f.sent":"WhatsApp opened with your message ready.",
+"f.sending":"Sending your request…",
+"f.sent":"Your request has been sent. We’ll contact you using the details provided.",
+"f.failed":"We couldn’t send your request. Please try again or contact us directly.",
 "f.tgok":"Text copied. Paste it into the Telegram chat.",
 "f.tgno":"Telegram opened. Send us your name, phone and farm size.",
+"f.submit":"Send request",
+"f.privacy":"By submitting, you agree to send the information provided through FormSubmit to bilolpython@gmail.com. FormSubmit says it stores copies of submissions for up to 30 days; see its <a href=\"https://formsubmit.co/privacy.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>.",
+"f.hint":"Your request will be sent to our email. We’ll contact you using the details provided.",
 "nav.aria":"Sections",
 "lang.aria":"Page language",
 "menu.aria":"Menu",
@@ -2006,8 +2029,8 @@ function renderRoad(){
 }
 $$('#road button').forEach(function(b){b.addEventListener('click',function(){road=+b.dataset.pic;renderRoad()})});
 
-/* ---------- заявка: готовое сообщение в WhatsApp или Telegram, сайт сам ничего не отправляет ---------- */
-var form=$('#req'),PHONE='992927543115',TG='https://t.me/bilol_bj';
+/* ---------- заявка: отправка на почту через FormSubmit ---------- */
+var form=$('#req'),TG='https://t.me/bilol_bj';
 function message(){
   var v=function(n){return form.elements[n].value.trim()},rows=[t('req.head'),''];
   rows.push(plain('f.name')+': '+v('name'));rows.push(plain('f.contact')+': '+v('contact'));
@@ -2024,8 +2047,16 @@ function valid(){
 }
 form.addEventListener('submit',function(e){
   e.preventDefault();if(!valid())return;
-  window.open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(message()),'_blank','noopener');
-  $('#f-st').textContent=t('f.sent');
+  var button=form.querySelector('button[type="submit"]'),label=button.querySelector('[data-i18n="f.submit"]'),status=$('#f-st');
+  var values=function(n){var x=form.elements[n];return x?x.value.trim():''};
+  var ty=form.querySelector('[name="type"]:checked'),sz=form.querySelector('[name="size"]:checked');
+  var payload={_subject:'CHORVO AI — новая заявка с лендинга',_template:'table',_url:location.href,_honey:values('_honey'),language:CODE[lang],name:values('name'),contact:values('contact'),poultry_type:ty?plain(ty.value):'',flock_size:sz?plain(sz.value):'',comment:values('comment'),roi_calculation:roiUsed?fill(t('req.calc'),lastRoi):''};
+  button.disabled=true;label.textContent=t('f.sending');status.textContent=t('f.sending');
+  fetch('https://formsubmit.co/ajax/bilolpython@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){if(!r.ok)throw new Error('submission failed');return r.json()})
+    .then(function(data){if(data.success!==true&&data.success!=='true')throw new Error('submission failed');status.textContent=t('f.sent');form.reset();$('#f-err').hidden=true})
+    .catch(function(){status.textContent=t('f.failed')})
+    .finally(function(){button.disabled=false;label.textContent=t('f.submit')});
 });
 $('#f-tg').addEventListener('click',function(){
   if(!valid())return;var txt=message(),st=$('#f-st');

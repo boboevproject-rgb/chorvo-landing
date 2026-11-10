@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 360" role="img" aria-labelledby="title desc">
+  <title id="title">CHORVO AI</title>
+  <desc id="desc">CHORVO AI logo for dark backgrounds: lime mark with a graphite ring and the CHORVO wordmark.</desc>
+  <rect x="56" y="56" width="248" height="248" rx="72" fill="#d1fe17"/>
+  <circle cx="180" cy="180" r="76" fill="none" stroke="#2b2d31" stroke-width="23"/>
+  <circle cx="180" cy="180" r="32" fill="#2b2d31"/>
+  <text x="360" y="246" fill="#f6f4ec" font-family="Montserrat, Arial, sans-serif" font-size="190" font-weight="800" letter-spacing="17">CHORVO</text>
+  <text x="1317" y="112" fill="#d1fe17" font-family="Montserrat, Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="6">AI</text>
+</svg>
